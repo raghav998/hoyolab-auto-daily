@@ -144,7 +144,7 @@ async function discordWebhookSend() {
     return
   }
   let discordMsg = ""
-  if (discordUser) {
+  if (discordUser && hasErrors) {
       discordMsg = `<@${discordUser}>\n`
   }
   discordMsg += messages.map(msg => `(${msg.type.toUpperCase()}) ${msg.string}`).join('\n')
