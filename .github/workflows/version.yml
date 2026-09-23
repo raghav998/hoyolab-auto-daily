@@ -5,9 +5,13 @@ on:
     - cron: "0 18 * * *" # scheduled at 06:00 (UTC+8) everyday
   workflow_dispatch:
 
+permissions: {}
+
 jobs:
   check-version:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Clone Repo
         uses: actions/checkout@v4
@@ -43,4 +47,4 @@ jobs:
     permissions:
       actions: write
     steps:
-      - uses: liskin/gh-workflow-keepalive@v1
+      - uses: liskin/gh-workflow-keepalive@f72ff1a1336129f29bf0166c0fd0ca6cf1bcb38c # v1
